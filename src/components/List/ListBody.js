@@ -55,7 +55,7 @@ function ListBody(props) {
                     w={['50%', 'fit-content', 'fit-content']}
                     size={['xs', 'md', 'lg']}
                     bgColor={'secondaryBg'} color='white'
-                    _hover={{ color: 'secondaryBg', bgColor: 'white', border: '1px solid #1D358F' }}
+                    _hover={{ color: 'secondaryBg', bgColor: 'white', border: '1px solid #92B161' }}
                     onClick={() => navigate('/list', { state: data })}>
                     View all properties
                 </Button>

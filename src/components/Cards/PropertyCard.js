@@ -97,12 +97,12 @@ function PropertyCard(props) {
           </Box>
           <Box>
             <a href="tel:+91-7522828359">
-              <RiPhoneFill cursor={'pointer'} size='25' color='#1D358F' />
+              <RiPhoneFill cursor={'pointer'} size='25' color='#92B161' />
             </a>
           </Box>
           <Button
             bgColor={'secondaryBg'} color='white'
-            _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #1D358F' }}
+            _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #92B161' }}
             onClick={() => {
               navigate(`/property/${data?._id}`);
             }}>Know More</Button>

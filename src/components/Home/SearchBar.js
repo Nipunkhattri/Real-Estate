@@ -53,7 +53,7 @@ function SearchBar() {
                     size={['xs', 'sm', 'md']}
                     bgColor={'secondaryBg'}
                     color='white'
-                    _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #1D358F' }}
+                    _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #92B161' }}
                     onClick={goToResultPage}>
                     <Search2Icon marginRight={['0.5', '0.5', '2']} />Search
                 </Button>

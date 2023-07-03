@@ -10,7 +10,7 @@ import store from './redux/store';
 const theme = extendTheme({
   colors: {
     primaryBg: "#E8EDF1",
-    secondaryBg:"#1D358F",
+    secondaryBg:"#92B161",
     primaryText:"#000000",
     primary: "#9F366E",
     secondary: "#FAA617",

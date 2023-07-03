@@ -14,7 +14,7 @@ function NewLaunchedProjects(props) {
           <img src={ad1?.img_url} alt="" />
           <Button bgColor={'secondaryBg'}
             color='white'
-            _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #1D358F' }}
+            _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #92B161' }}
             onClick={() => {
               navigate(`/property/${ad1?.property_name}`);
             }}
@@ -27,7 +27,7 @@ function NewLaunchedProjects(props) {
           <img src={ad2?.img_url} alt="" />
           <Button bgColor={'secondaryBg'}
             color='white'
-            _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #1D358F' }}
+            _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #92B161' }}
             onClick={() => {
               navigate(`/property/${ad2?.property_name}`);
             }}

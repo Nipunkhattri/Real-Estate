@@ -21,7 +21,7 @@ function HeroSection() {
         size={['sm', 'sm', 'md']}
         bgColor={'secondaryBg'}
         color='white'
-        _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #1D358F' }}
+        _hover={{ bgColor: 'white', color: 'secondaryBg', border: '1px solid #92B161' }}
         onClick={() => navigate('/list')}>
         Explore More
       </Button>
