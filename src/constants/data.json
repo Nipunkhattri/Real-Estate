@@ -1,0 +1,90 @@
+{
+	"constantsData": {
+		"header": ["Home", "Property", "About Us", "Contact Us"],
+		"BengaluruDirections": [
+			{ "title": "Bangalore East", "href": "East" },
+			{ "title": "Bangalore West", "href": "West" },
+			{ "title": "Bangalore North", "href": "North" },
+			{ "title": "Bangalore South", "href": "South" }
+		],
+		"subHeadingTabs": [
+			"Upcoming",
+			"New Launch",
+			"Under Construction",
+			"Ready to Move",
+			"Exclusive Offers"
+		],
+		"newLaunchedProjects": [
+			{
+				"heading": "3BHK @ ₹10,999 EMI Till Possession | Assetz Marq",
+				"imageSource": "https://www.homznspace.com/wp-content/uploads/2022/02/Assetz-Marq-3.0-Launch-EMI-Offer-Homz-N-Space-A.jpg"
+			},
+			{
+				"heading": "Luxury Home @ Just ₹9,999 PM | Assetz 63 East",
+				"imageSource": "https://www.homznspace.com/wp-content/uploads/2022/02/Assetz-63-East-Launch-EMI-Banner-Homz-N-Space-A.jpg"
+			}
+		],
+		"propFilterDetails": [
+			{
+				"name": "Apartments",
+				"preference": ["1 BHK", "2 BHK", "3 BHK", "4 BHK+"]
+			},
+			{
+				"name": "Villas",
+				"preference": ["3 BHK", "4 BHK", "5 BHK+"]
+			},
+			{
+				"name": "Plots",
+				"preference": [
+					"30 X 40",
+					"30 X 50",
+					"30 X 60",
+					"40 X 60",
+					"50 X 80"
+				]
+			}
+		],
+		"locationFields": [
+			{ "name": "Whitefield", "slug": "white field" },
+			{ "name": "Sarjapur Road", "slug": "sarjapur" },
+			{ "name": "Thanisandra Main Road", "slug": "thanisandra" },
+			{ "name": "Electronic City", "slug": "electronic city" }
+		],
+		"NavLinkList": [
+			"Home",
+			"Price",
+			"Amenities",
+			"EMI",
+			"Gallery",
+			"About"
+		],
+		"modalEnquiryList": [
+			{
+				"imageUrl": "https://ik.imagekit.io/i66bfudbc/instant_call_back_wiXEMVgny.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660415111120",
+				"heading": "Instant Call Back"
+			},
+			{
+				"imageUrl": "https://ik.imagekit.io/i66bfudbc/free_site_visit_4BUKd1c48.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660415110996",
+				"heading": "Free Site Visit"
+			},
+			{
+				"imageUrl": "https://ik.imagekit.io/i66bfudbc/unmatched_price_m_2Jyi0Pc.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660415111440",
+				"heading": "Unmatched Price"
+			}
+		],
+		"headingLists": [
+			{
+				"title": "Open Space :",
+				"description": "168 Acres"
+			},
+			{
+				"title": "Units",
+				"description": "156+ Units"
+			},
+			{
+				"title": "Possession",
+				"description": "2024"
+			}
+		]
+	}
+}
