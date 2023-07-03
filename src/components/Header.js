@@ -2,6 +2,7 @@ import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Box, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerOverlay, Heading, Image, Link, LinkBox, Menu, MenuButton, MenuItem, MenuList, Text, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
 import jsonData from '../constants/data.json';
+import logo from "./Assets/logo.png"
 
 const NavMenu = () => (
     <>
@@ -25,6 +26,16 @@ const NavMenu = () => (
                 Contact Us
             </Text>
         </Link>
+        <Link href='/login'>
+            <Text fontSize='xl'>
+                Login
+            </Text>
+        </Link>
+        <Link href='/signup'>
+            <Text fontSize='xl'>
+                Sign Up
+            </Text>
+        </Link>
     </>
 );
 
@@ -39,10 +50,9 @@ function Header() {
 
             <Link href="/">
                 <Image
-                    width={['20', '50px', '100px']}
-                    m='1'
-                    objectFit='contain'
-                    src={'https://ik.imagekit.io/i66bfudbc/Sqrepng_meYXT9KXS_W-Tr1QHTj.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660600918582'}
+                    width="80px"
+                    m='0'
+                    src={logo}
                     alt='' />
             </Link>
 

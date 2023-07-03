@@ -6,6 +6,8 @@ import {
     Link,
     SimpleGrid,
 } from '@chakra-ui/react';
+import logo from "./Assets/logo.png"
+
 
 export default function Footer() {
     return (
@@ -21,7 +23,7 @@ export default function Footer() {
                     <Link href="/">
                         <Image
                             boxSize={'100px'}
-                            src='https://ik.imagekit.io/i66bfudbc/Sqrepng_meYXT9KXS.PNG?ik-sdk-version=javascript-1.4.3&updatedAt=1660430628859'
+                            src={logo}
                             alt=''
                             objectFit='cover'
                             ml={['0', '0', '12']} />

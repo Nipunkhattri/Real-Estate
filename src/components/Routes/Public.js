@@ -13,6 +13,8 @@ import ContactUspage from '../../pages/ContactUspage';
 import Careerspage from '../../pages/Careerspage';
 import PrivacyPolicypage from '../../pages/PrivacyPolicypage';
 import Disclaimerpage from '../../pages/Disclaimerpage';
+import Login from "../../pages/Login";
+import Signup from "../../pages/Signup";
 
 function Public() {
     const properties = useSelector(state => state.properties);
@@ -35,6 +37,8 @@ function Public() {
                 <Route path="/careers" element={<Careerspage />} />
                 <Route path="/privacy" element={<PrivacyPolicypage />} />
                 <Route path="/disclaimer" element={<Disclaimerpage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path='*' element={<NotFoundpage />} />
             </Routes>
         </Router>
