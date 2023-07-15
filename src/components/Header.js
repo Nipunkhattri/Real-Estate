@@ -1,8 +1,14 @@
 import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Box, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerOverlay, Heading, Image, Link, LinkBox, Menu, MenuButton, MenuItem, MenuList, Text, useDisclosure } from '@chakra-ui/react';
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import jsonData from '../constants/data.json';
 import logo from "./Assets/logo.png"
+import axios from 'axios'
+import { setLogout } from "../../src/redux/reducers/authslice";
+import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const NavMenu = () => (
     <>
@@ -41,6 +47,23 @@ const NavMenu = () => (
 
 function Header() {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [name,setname] = useState('')
+    const { isAuthenticated } = useSelector((state) => ({ ...state.authSlice }));
+    const {user} = useSelector((state) => ({...state.authSlice}));
+    useEffect(()=>{
+        setname(user?.data?.result?.Name);
+    },[user])
+
+    console.log(name)
+    console.log(isAuthenticated);
+
+    const logout = ()=>{
+        dispatch(setLogout());
+        navigate("/Login")
+        toast.success("Logout successfully")
+      }
 
     return (
         <Box position={'sticky'} top='0' zIndex={'1000'}
@@ -77,7 +100,42 @@ function Header() {
                 </Box>
 
                 <Box display={['none', 'none', 'flex']} justifyContent='space-between' alignItems={'center'} gap='4' pr={'10'}>
-                    <NavMenu />
+                    {
+                        isAuthenticated?
+                       <>
+                         <Link href='/'>
+            <Text fontSize='xl'>
+                Home
+            </Text>
+        </Link>
+        <Link href='/list'>
+            <Text fontSize='xl'>
+                Property
+            </Text>
+        </Link>
+        <Link href='/about'>
+            <Text fontSize='xl'>
+                About Us
+            </Text>
+        </Link>
+        <Link href='/contact'>
+            <Text fontSize='xl'>
+                Contact Us
+            </Text>
+        </Link>
+        <Link href='/'>
+            <Text fontSize='xl'>
+                Welcome({name})
+            </Text>
+        </Link>
+        <Link href='/'>
+            <Text fontSize='xl' onClick={logout}>
+                Logout
+            </Text>
+        </Link>
+                       </>:
+                        <NavMenu />
+                    }
                 </Box>
 
                 <Box display={['block', 'block', 'none']}>

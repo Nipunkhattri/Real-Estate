@@ -15,6 +15,8 @@ import PrivacyPolicypage from '../../pages/PrivacyPolicypage';
 import Disclaimerpage from '../../pages/Disclaimerpage';
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Public() {
     const properties = useSelector(state => state.properties);
@@ -26,6 +28,8 @@ function Public() {
         //eslint-disable-next-line
     }, []);
     return (
+        <>
+        <ToastContainer/>
         <Router>
             <Routes>
                 <Route path='/' element={<Homepage data={properties} ad={advertisements.data.advertisements} />} />
@@ -42,6 +46,7 @@ function Public() {
                 <Route path='*' element={<NotFoundpage />} />
             </Routes>
         </Router>
+        </>
     );
 }
 

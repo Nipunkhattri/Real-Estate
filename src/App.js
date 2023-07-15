@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react"
 import { RiWhatsappFill } from "react-icons/ri"
 import Footer from "./components/Footer"
 import Public from "./components/Routes/Public"
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (

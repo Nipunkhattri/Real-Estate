@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchAllAdvertisements } from "../../api/advertisements";
+import { toast } from "react-toastify";
+import * as api from "../../api/config";
 
 export const fetchAdvertisements = createAsyncThunk("advertisements/fetchall", async () => {
     try {
