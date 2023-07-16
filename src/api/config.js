@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const instance = axios.create({
-    baseURL: "http://localhost:9001/api/v1/",
+    baseURL: "https://real-backend.onrender.com/api/v1/",
     // https://realstate-web-app-backend.vercel.app/api/v1
 })
 

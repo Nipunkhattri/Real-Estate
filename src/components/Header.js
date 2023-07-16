@@ -170,7 +170,7 @@ function Header() {
                                             boxSize={'150px'}
                                             m='1'
                                             objectFit='contain'
-                                            src={'https://ik.imagekit.io/i66bfudbc/Sqrepng_meYXT9KXS_W-Tr1QHTj.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660600918582'}
+                                            src={logo}
                                             alt='' />
                                     </Box>
                                     <NavMenu />
