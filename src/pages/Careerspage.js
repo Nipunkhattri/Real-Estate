@@ -12,7 +12,7 @@ function Careerspage() {
           alt='' />
         <Box pt='5' fontSize={'md'}>
           <Text>
-            Square Realty is a pioneer in the industry and for close to a decade, we have consistently been one of the Best Platforms for Top Quality Projects, Unbiased reviews, and Unmatched Customer Service. We’re looking to expand the Square Realty team and are looking for the perfect candidates for the following roles.
+            Propmile Consulting is a pioneer in the industry and for close to a decade, we have consistently been one of the Best Platforms for Top Quality Projects, Unbiased reviews, and Unmatched Customer Service. We’re looking to expand the Propmile Consulting team and are looking for the perfect candidates for the following roles.
           </Text>
           <Box>
             <Heading fontSize='5xl' color={'blackAlpha.600'} my='5'>Sales</Heading>

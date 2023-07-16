@@ -9,9 +9,9 @@ function Aboutuspage() {
             <Box m='auto' p='2' w='90%' minH='80vh'>
                 <Heading textAlign={'center'} fontSize='4xl' mt='4'>About Us</Heading>
                 <Box pt='10' fontSize={'xl'}>
-                    Square Realty is a Portal which showcases flagship projects of Top Real Estate Brands & provides 360° assistance to Property Seekers to find the best properties.
+                    Propmile Consulting is a Portal which showcases flagship projects of Top Real Estate Brands & provides 360° assistance to Property Seekers to find the best properties.
 
-                    Starting as a niche platform for homebuyers to review & request advice on their preferred properties, Square Realty is now a pioneer of the holistic online Real Estate genre and leading the way for today’s Smart, Tech-enabled generation to find their dream home.
+                    Starting as a niche platform for homebuyers to review & request advice on their preferred properties, Propmile Consulting is now a pioneer of the holistic online Real Estate genre and leading the way for today’s Smart, Tech-enabled generation to find their dream home.
 
                     Times may have changed, but the mission has always remained the same – unbiased reviews and invaluable insights to all home buyers.
                     To Serve… To Guide… To Help…
