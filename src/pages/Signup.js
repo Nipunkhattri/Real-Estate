@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { register } from "../redux/reducers/authslice";
 import { toast } from "react-toastify";
 export default function Signup() {
@@ -13,12 +15,17 @@ export default function Signup() {
     name:"",
     email:"",
     password:"",
-    reset:""
+    reset:"",
+    Phone:""
   })
 
   const handleChange = (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };
+  const handlePhoneChange = (Phone) => {
+    setdata({ ...data, Phone });
+  };
+
   console.log(data)
 
   const submit = (e) =>{
@@ -49,6 +56,8 @@ export default function Signup() {
         <input type="password" id="pwd" value={data.password} onChange={handleChange} name="password" required /><br/>
         <label for="re-pwd">Retype Password</label><br/>
         <input type="password" id="re-pwd" value={data.reset} onChange={handleChange}  name="reset" required /><br/>
+        <label for="re-pwd">Phone Number</label><br/>
+        <PhoneInput country={"in"} value={data.Phone} onChange={handlePhoneChange} />
         <button id="final-login" onClick={submit}>SignUp</button><br/>
         <p id="no-account" >Already Have An Account? <a href="/login">Login</a></p>
       </form>

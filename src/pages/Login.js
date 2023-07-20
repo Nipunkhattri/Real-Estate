@@ -60,6 +60,9 @@ export default function Login() {
           <p id="no-account">
             Don't have an account? <a href="/signup">Sign up</a>
           </p>
+          <p id="no-account">
+            Login using  <a href="/otplogin">Otp</a>
+          </p>
         </form>
       </section>
     </>

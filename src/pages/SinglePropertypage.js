@@ -21,6 +21,7 @@ import LocationMap from '../components/SingleProperty/LocationMap';
 import LocationPoints from '../components/SingleProperty/LocationPoints';
 import NewPricingSection from '../components/SingleProperty/NewPricingSection';
 import EMICalculator from '../components/SingleProperty/EMICalculator';
+import PropertyComments from '../components/SingleProperty/PropertyComments';
 
 function SinglePropertypage() {
   const pid = useParams();
@@ -34,6 +35,7 @@ function SinglePropertypage() {
         const res = await axios.get(
           `https://realstate-web-app-backend.vercel.app/api/v1/properties/${pid.pid}`
         );
+        console.log(res.data);
         setData(res.data);
         setLoading(false);
       } catch (err) {
@@ -228,6 +230,7 @@ function SinglePropertypage() {
                 borderRadius='md' boxShadow='xl' bgColor='white'
               >
                 <PropertyFAQ data={data?.propertyDetails?.faqs} />
+                <PropertyComments data1={data?.propertyDetails?._id}  />
               </Box>
               <Box
                 m={['1', '2', '4']} p={['1', '2', '2']}
