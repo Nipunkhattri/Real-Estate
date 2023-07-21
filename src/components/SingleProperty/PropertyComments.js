@@ -41,7 +41,20 @@ const PropertyComments = (props) => {
   const handleCommentClick = async (commentId) => {
     await setdata1((data2) => ({ ...data2, commentId: commentId }));
     console.log(data2);
-    await dispatch(postReply(data2))
+    // await dispatch(postReply(data2))
+    //   .then((res) => {
+    //     console.log(res);
+    //     dispatch(getcomments());
+    //     window.location.reload();
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     // setError(error);
+    //   });
+  };
+
+  useEffect(()=>{
+      dispatch(postReply(data2))
       .then((res) => {
         console.log(res);
         dispatch(getcomments());
@@ -51,7 +64,7 @@ const PropertyComments = (props) => {
         console.log(err);
         // setError(error);
       });
-  };
+  },[data2.commentId])
 
   console.log(data);
   console.log(data2);

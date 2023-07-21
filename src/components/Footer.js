@@ -104,7 +104,7 @@ export default function Footer() {
                 </Box>
             </Box>
             <Text py='2' fontSize={'sm'} textAlign='center' bgColor={'secondaryBg'} w='100%' color={'white'}>
-                © 2022 Square Realty. All rights reserved
+                © 2022 Propmile Consulting. All rights reserved
             </Text>
         </>
     );
