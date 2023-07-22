@@ -10,8 +10,7 @@ export const postcomment = createAsyncThunk("Comment/post", async (data) => {
     toast.success("Comment posted Successfully");
     return res;
   } catch (error) {
- 
-    toast.error("Login Required!");
+    toast.success("Login Required");
     console.log(error);
   }
 });
@@ -35,6 +34,7 @@ export const postReply = createAsyncThunk("post/Reply", async (data2) => {
     toast.success("reply posted Successfully");
     return res.data;
   } catch (error) {
+    toast.success("Login Required");
     console.log(error);
   }
 });

@@ -9,12 +9,14 @@ import {
   postcomment,
 } from "../../redux/reducers/CommentSlice";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const PropertyComments = (props) => {
   const dispatch = useDispatch();
   const { data1 } = props;
   console.log(data1);
-  const { isAuthenticated } = useSelector((state) => ({ ...state.authSlice }));
+  const navigate = useNavigate();
+  // const { isAuthenticated } = useSelector((state) => ({ ...state.authSlice }));
 
   const { user } = useSelector((state) => ({ ...state.authSlice }));
   const { comments } = useSelector((state) => ({ ...state.CommentSlice }));
@@ -57,23 +59,24 @@ const PropertyComments = (props) => {
   };
 
   useEffect(() => {
-    if(isAuthenticated == false){
-      toast.error("Login Required")
-    }
-    else{
+    // if(isAuthenticated == false){
+    //   toast.error("Login Required")
+    // }
+    // else{
     dispatch(postReply(data2))
       .then((res) => {
         console.log(res);
-        dispatch(getcomments());
-        window.location.reload();
+        navigate('/')
+        // window.location.reload();
       })
       .catch((err) => {
         console.log(err);
         // setError(error);
       });
-    }
+    // }
   }, [data2.commentId]);
 
+  // console.log(isAuthenticated)
   console.log(data);
   console.log(data2);
 
@@ -82,21 +85,21 @@ const PropertyComments = (props) => {
   }, []);
 
   const handleclick = () => {
-    if(isAuthenticated == false){
-      toast.error("Login Required")
-    }
-    else{
+    // if(isAuthenticated == false){
+    //   toast.error("Login Required")
+    // }
+    // else{
     dispatch(postcomment(data))
       .then((res) => {
         console.log(res);
         dispatch(getcomments());
-        window.location.reload();
+        navigate('/');
       })
       .catch((err) => {
         console.log(err);
         // setError(error);
       });
-    }
+    // }
   };
 
   const handleclick1 = (index) => {
