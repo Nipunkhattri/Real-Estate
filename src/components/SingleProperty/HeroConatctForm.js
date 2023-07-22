@@ -50,6 +50,7 @@ function HeroConatctForm(props) {
       boxShadow="md"
       zIndex="99999"
       transition="0.5s"
+      display="none"
       _hover={
         {
             bgColor:"white"

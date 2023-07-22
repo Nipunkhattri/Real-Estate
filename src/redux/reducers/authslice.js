@@ -27,7 +27,7 @@ export const authlogin = createAsyncThunk(
         console.log(response)
         toast.success("Registered successfully");
         // <NotificationBox message="Success message" type="success" />
-        navigate("/login");
+        navigate("/otplogin");
         return response.data;
       } catch (err) {
         // toast.error("Something Wrong");
@@ -48,7 +48,8 @@ export const authlogin = createAsyncThunk(
         navigate('/');
         return res 
     } catch (error) {
-        toast.error("Something went wrong");
+        navigate('/signup')
+        toast.error("Number Not Registered! SignUp");
         console.log(error);
     }
     }

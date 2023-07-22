@@ -32,7 +32,7 @@ const NavMenu = () => (
                 Contact Us
             </Text>
         </Link>
-        <Link href='/login'>
+        <Link href='/otplogin'>
             <Text fontSize='xl'>
                 Login
             </Text>

@@ -58,7 +58,7 @@ function SideEnquiryForm(props) {
             <Button
                 bgColor={'black'} color='white'
                 _hover={{ bgColor: 'white', color: 'black', border: '1px solid black' }}
-                m='2' pos='fixed' right='1' bottom='150' zIndex='50' ref={btnRef} onClick={onOpen}
+                m='5' pos='fixed' right='-6' bottom="450" zIndex='50' ref={btnRef} onClick={onOpen}
             >
                 Enquire Now
             </Button>

@@ -79,7 +79,18 @@
     z-index: 0;
     padding-left: 50px;
   }
-  
+  .phone{
+    margin-bottom: 20px;
+   
+    background-color: rgb(241, 241, 241);
+
+
+
+  }
+
+  .opt-container input{
+    border: 1px solid black !important;
+  }
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 800, "GRAD" 0, "opsz" 48;
   }

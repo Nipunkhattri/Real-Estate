@@ -36,9 +36,7 @@ export default function Login() {
           This is a <span>Login</span> for account
         </h2>
         <p id="content">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nesciunt
-          animi rerum, officia error et laboriosam suscipit provident quam sint
-          accusamus vero.
+       
         </p>
         <form action="">
           <label for="name">Name</label>

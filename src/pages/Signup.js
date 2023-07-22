@@ -43,9 +43,8 @@ export default function Signup() {
     <>
     <Header></Header>
     <section id="login">
-      <h2>This is a <span>Signup</span>  for account</h2>
+      <h2 style={{fontSize:"25px"}}>This is a <span>Signup</span>  for account</h2>
       <p id="content">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab nesciunt animi rerum, officia error et laboriosam suscipit provident quam sint accusamus vero.
       </p>
       <form action="">
         <label for="name">Name</label><br/>
@@ -57,7 +56,7 @@ export default function Signup() {
         <label for="re-pwd">Retype Password</label><br/>
         <input type="password" id="re-pwd" value={data.reset} onChange={handleChange}  name="reset" required /><br/>
         <label for="re-pwd">Phone Number</label><br/>
-        <PhoneInput country={"in"} value={data.Phone} onChange={handlePhoneChange} />
+        <PhoneInput className="phone" country={"in"} value={data.Phone} onChange={handlePhoneChange} />
         <button id="final-login" onClick={submit}>SignUp</button><br/>
         <p id="no-account" >Already Have An Account? <a href="/login">Login</a></p>
       </form>

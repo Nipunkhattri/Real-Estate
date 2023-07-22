@@ -11,6 +11,8 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { toast, Toaster } from "react-hot-toast";
 import { setotp } from "../redux/reducers/authslice";
 import Header from "../components/Header";
+import "./Login.css";
+import logo from "../components/Assets/logo.png"
 
 const OtpLogin = () => {
   const [otp, setOtp] = useState("");
@@ -93,24 +95,21 @@ const OtpLogin = () => {
   return (
     <>
        <Header></Header>
-    <section className="bg-emerald-500 flex items-center justify-center h-screen">
+    <section className="flex items-center justify-center h-screen">
       <div>
         <Toaster toastOptions={{ duration: 4000 }} />
         <div id="recaptcha-container"></div>
-        {user ? (
-          <h2 className="text-center text-white font-medium text-2xl">
-            👍Login Success
-          </h2>
-        ) : (
+        {user ? <></>: (
           <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
             {showOTP ? (
               <>
                 <div className="bg-white text-emerald-500 w-fit mx-auto p-4 rounded-full">
-                  <BsFillShieldLockFill size={30} />
+                  <img src={logo} alt="" />
                 </div>
                 <label
                   htmlFor="otp"
-                  className="font-bold text-xl text-white text-center"
+                  className="font-bold text-xl text-black text-center"
+                  // style={{border:"1px solid black"}}
                 >
                   Enter your OTP
                 </label>
@@ -121,39 +120,30 @@ const OtpLogin = () => {
                   otpType="number"
                   disabled={false}
                   autoFocus
-                  className="opt-container "
+                  className="opt-container"
+               
                 ></OtpInput>
-                <button
-                  onClick={onOTPVerify}
-                  className="bg-emerald-600 w-full flex gap-1 items-center justify-center py-2.5 text-white rounded"
-                >
-                  {loading && (
+                <button className="relative bottom-0" id="final-login" onClick={onOTPVerify}>{loading && (
                     <CgSpinner size={20} className="mt-1 animate-spin" />
-                  )}
-                  <span>Verify OTP</span>
-                </button>
+                  )}Verify OTP</button>
               </>
             ) : (
               <>
-                <div className="bg-white text-emerald-500 w-fit mx-auto p-4 rounded-full">
-                  <BsTelephoneFill size={30} />
+                <div className="bg-white text-emerald-500 w-fit mx-1 p-4 rounded-full">
+                <img src={logo} alt="" />
+
                 </div>
                 <label
                   htmlFor=""
-                  className="font-bold text-xl text-white text-center"
+                  className="relative  font-bold text-xl text-black text-center bottom-8"
                 >
                   Verify your phone number
                 </label>
-                <PhoneInput country={"in"} value={user1.phone} onChange={handlePhoneChange} />
-                <button
-                  onClick={onSignup}
-                  className="bg-emerald-600 w-full flex gap-1 items-center justify-center py-2.5 text-white rounded"
-                >
-                  {loading && (
+                <PhoneInput className="relative bottom-8" country={"in"} value={user1.phone} onChange={handlePhoneChange} />
+                
+                <button className="relative bottom-8" id="final-login" onClick={onSignup}>{loading && (
                     <CgSpinner size={20} className="mt-1 animate-spin" />
-                  )}
-                  <span>Send code via SMS</span>
-                </button>
+                  )}Send OTP Via Message</button><br/>
               </>
             )}
           </div>

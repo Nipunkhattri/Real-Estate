@@ -230,6 +230,11 @@ function SinglePropertypage() {
                 borderRadius='md' boxShadow='xl' bgColor='white'
               >
                 <PropertyFAQ data={data?.propertyDetails?.faqs} />
+              </Box>
+              <Box
+                m={['1', '2', '4']} p={['1', '2', '2']}
+                borderRadius='md' boxShadow='xl' bgColor='white'
+              >
                 <PropertyComments data1={data?.propertyDetails?._id}  />
               </Box>
               <Box

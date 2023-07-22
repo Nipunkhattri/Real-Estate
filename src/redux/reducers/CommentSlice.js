@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from "../../api/config";
 import { toast } from "react-toastify";
 
+
 export const postcomment = createAsyncThunk("Comment/post", async (data) => {
   try {
     const res = await api.commentpost(data);
@@ -9,7 +10,8 @@ export const postcomment = createAsyncThunk("Comment/post", async (data) => {
     toast.success("Comment posted Successfully");
     return res;
   } catch (error) {
-    toast.error("Something went wrong!!");
+ 
+    toast.error("Login Required!");
     console.log(error);
   }
 });
