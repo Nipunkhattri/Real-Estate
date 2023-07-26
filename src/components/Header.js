@@ -32,11 +32,6 @@ const NavMenu = () => (
                 Contact Us
             </Text>
         </Link>
-        <Link href='/otplogin'>
-            <Text fontSize='xl'>
-                Login
-            </Text>
-        </Link>
         <Link href='/signup'>
             <Text fontSize='xl'>
                 Sign Up
@@ -61,7 +56,7 @@ function Header() {
 
     const logout = ()=>{
         dispatch(setLogout());
-        navigate("/Login")
+        navigate("/signup")
         toast.success("Logout successfully")
       }
 

@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from "../../api/config";
 import { toast } from "react-toastify";
 
-
 export const postcomment = createAsyncThunk("Comment/post", async (data) => {
   try {
     const res = await api.commentpost(data);
@@ -14,6 +13,7 @@ export const postcomment = createAsyncThunk("Comment/post", async (data) => {
     console.log(error);
   }
 });
+
 
 export const getcomments = createAsyncThunk("get/comments", async (idd) => {
   console.log(idd);

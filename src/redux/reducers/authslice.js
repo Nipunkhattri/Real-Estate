@@ -27,7 +27,7 @@ export const authlogin = createAsyncThunk(
         console.log(response)
         toast.success("Registered successfully");
         // <NotificationBox message="Success message" type="success" />
-        navigate("/otplogin");
+        // navigate("/otplogin");
         return response.data;
       } catch (err) {
         // toast.error("Something Wrong");
@@ -39,10 +39,10 @@ export const authlogin = createAsyncThunk(
 
   export const setotp = createAsyncThunk(
     'auth/setotp',
-    async ({user1, navigate},{rejectWithValue}) => {
+    async ({data, navigate},{rejectWithValue}) => {
       try {
-        console.log(user1)
-        const res = await api.setotp(user1);
+        console.log(data)
+        const res = await api.setotp(data);
         console.log(res);
         toast.success("Login Success");
         navigate('/');
