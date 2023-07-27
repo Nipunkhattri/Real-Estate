@@ -73,9 +73,9 @@ function SinglePropertypage() {
         <>
           {flag ? (
             <Box bgColor={"primaryBg"} h="100%">
-              <Box display={["none", "none", "block"]}>
+              {/* <Box display={"block"}>
                 <SideEnquiryForm data={data?.propertyDetails} />
-              </Box>
+              </Box> */}
               <Box
                 bgColor={"black"}
                 color="white"

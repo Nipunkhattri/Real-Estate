@@ -147,7 +147,7 @@ export default function Signup() {
             ) : (
               <div className=" flex flex-col justify-center gap-4 rounded-lg p-4">
           <section id="login">
-            <h2 style={{fontSize:"25px"}}>This is a <span>Signup</span>  for account</h2>
+            <h2 style={{fontSize:"25px"}}>This is a <span>Login</span>  for account</h2>
             <p id="content">
             </p>
             <form action="">
@@ -158,8 +158,8 @@ export default function Signup() {
               {/* <button id="final-login" onClick={onSignup}>SignUp</button><br/> */}
               <button className="relative bottom-0" id="final-login" onClick={onSignup}>{loading && (
                     <CgSpinner size={20} className="mt-1 animate-spin" />
-                  )}Sign Up</button>
-              <p id="no-account" >Already Have An Account? <a href="/login">Login</a></p>
+                  )}Log In</button>
+              
             </form>
           </section>
           </div>

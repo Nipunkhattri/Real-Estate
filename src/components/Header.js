@@ -34,7 +34,7 @@ const NavMenu = () => (
         </Link>
         <Link href='/signup'>
             <Text fontSize='xl'>
-                Sign Up
+                Login
             </Text>
         </Link>
     </>
