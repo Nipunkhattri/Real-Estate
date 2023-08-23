@@ -18,6 +18,7 @@ import Signup from "../../pages/Signup";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import OtpLogin from "../../pages/OtpLogin";
+import ChatBot from "../SingleProperty/ChatBot";
 
 function Public() {
     const properties = useSelector(state => state.properties);
@@ -45,6 +46,7 @@ function Public() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/otplogin" element={<OtpLogin />} />
+                <Route path='/chatbot' element={<ChatBot/>}/>
                 <Route path='*' element={<NotFoundpage />} />
             </Routes>
         </Router>

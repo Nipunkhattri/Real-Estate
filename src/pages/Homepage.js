@@ -5,6 +5,7 @@ import CardsSection from '../components/Home/CardsSection';
 import HeroSection from '../components/Home/HeroSection';
 import NewLaunchedProjects from '../components/Home/NewLaunchedProjects';
 import NewLaunchSlider from '../components/Home/NewLaunchSlider';
+import ChatBot from '../components/SingleProperty/ChatBot';
 
 function Homepage(props) {
     const { data, ad } = props;
@@ -12,6 +13,7 @@ function Homepage(props) {
         <>
             <Header />
             <HeroSection />
+            <ChatBot/>
             <Box display={['block']} w='100%'>
                 {data && <NewLaunchSlider data={data} />}
             </Box>
