@@ -12,6 +12,7 @@ import axios from "axios";
 import { Box, Button, Heading, SimpleGrid } from '@chakra-ui/react';
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import CardsSection from "../Home/CardsSection";
+import ChatCard from "../Home/ChatCard";
 
 const ChatBot = () => {
   const dispatch = useDispatch();
@@ -306,8 +307,8 @@ const ChatBot = () => {
         )}
         {
           data != ''?
-          <></>
           // <CardsSection data={data}/>
+          <ChatCard data={data}/>
           :<></>
         }
       </div>
