@@ -45,9 +45,9 @@ const ChatBot = () => {
   const makeApiCall = async () => {
     try {
       console.log("api call");
-        const response = await axios.post("http://localhost:9001/query",query);
+        const response = await axios.post("https://real-backend.onrender.com/query",query);
         console.log(response);
-        setdata(response.data[0]);
+        setdata(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -121,8 +121,9 @@ const ChatBot = () => {
       .confirm(otp)
       .then(async (res) => {
         console.log(res);
+        console.log(user1);
+        dispatch(setotp({user1,navigate}));
         setname(true);
-        // dispatch(setotp({user1,navigate}));
         setLoading(false);
         setInputValue("");
       })
