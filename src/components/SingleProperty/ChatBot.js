@@ -246,15 +246,15 @@ const ChatBot = () => {
                 spamming.
               </p>
             </div>
-            <button onClick={() => setCategory("bangalore north")}>
+            <button className="button" onClick={() => setCategory("bangalore north")}>
               North
             </button>
-            <button onClick={() => setCategory("bangalore south")}>
+            <button className="button" onClick={() => setCategory("bangalore south")}>
               South
             </button>
-            <button onClick={() => setCategory("bangalore east")}>East</button>
-            <button onClick={() => setCategory("bangalore west")}>West</button>
-            <button onClick={() => setCategory("bangalore central")}>
+            <button className="button" onClick={() => setCategory("bangalore east")}>East</button>
+            <button className="button" onClick={() => setCategory("bangalore west")}>West</button>
+            <button className="button" onClick={() => setCategory("bangalore central")}>
               Central
             </button>
           </>
@@ -280,13 +280,13 @@ const ChatBot = () => {
                 serve you better , please help us with a few details.
               </p>
             </div>
-            <button onClick={() => setsubCategory("new launch")}>
+            <button className="button" onClick={() => setsubCategory("new launch")}>
               New Launch
             </button>
-            <button onClick={() => setsubCategory("under construction")}>
+            <button className="button" onClick={() => setsubCategory("under construction")}>
               Under Construction
             </button>
-            <button onClick={() => setsubCategory("upcoming")}>Upcoming</button>
+            <button className="button" onClick={() => setsubCategory("upcoming")}>Upcoming</button>
           </>
         ) : (
           <></>

@@ -11,7 +11,9 @@ const NavLinkList = jsonData.constantsData['NavLinkList'];
 const NavMenu = () => (
     <>
         {NavLinkList.map((item, index) => (
-            <Link href={`#${item}`}
+
+            
+            <Link href={((item == "Home") ? "https://propmileconsulting.com":`#${item}`)}
                 key={index}
                 fontSize='xl'>
                 {item}
