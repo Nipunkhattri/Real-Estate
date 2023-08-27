@@ -128,7 +128,7 @@ const ChatBot = () => {
       .then(async (res) => {
         console.log(res);
         console.log(user1);
-        dispatch(setotp({user1,navigate}));
+        await dispatch(setotp({user1,navigate}));
         setname(true);
         setLoading(false);
         setInputValue("");
