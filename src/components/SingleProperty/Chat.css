@@ -1,7 +1,7 @@
 .chat-height{
-    height: 600px;
+    height: 450px;
     margin: 10px 10px;
-    width: 400px;
+    width: 380px;
     border-radius: 10px;
     /* background-color: rgb(3, 3, 3); */
     border: 2px solid #92B161;
@@ -24,11 +24,11 @@
 }
 .c-width{
     width: 100%;
-    background-color: black;
+    background-color: white;
     height: 2px;
 }
 .t1{
-    height: 50px;
+    height: 53px;
     margin: 5px 5px;
     border-radius: 10px;
     padding: 10px 7px;
@@ -36,15 +36,25 @@
     background-color: white;
 }
 .t2{
-    height: 100px;
+    height: 80px;
     margin: 5px 5px;
     border-radius: 10px;
     padding: 10px 7px;
     width: 90%;
     background-color: white;
 }
+
+.t1 p{
+    font-size: 14px;
+}
+.t2 p{
+    font-size: 14px;
+}
+.t3 p{
+    font-size: 14px;
+}
 .t3{
-    height: 150px;
+    height: 130px;
     margin: 5px 5px;
     border-radius: 10px;
     padding: 10px 7px;
@@ -53,11 +63,11 @@
 }
 
 .text{
-    height:500px;
+    height:350px;
     background-color: #e8edf1;
 }
 #input-text{
-    width: 80%;
+    width: 77%;
     position: relative;
     top: 1px;
     /* border: 2px solid black; */
@@ -99,7 +109,7 @@
     background-color: #92B161;
     position: relative;
     top:3px;
-    left: 2px;
+    left: 8px;
 }
 
 .button {
@@ -123,4 +133,38 @@
     background-color: black;
     color: white;
   }
+  .toggle-button {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    background-color: #92B161;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style for the open button */
+  .open-button {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: #92B161;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 99999999;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+  }
+  
+  /* Add styles for toggling visibility */
+  .visible {
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
   

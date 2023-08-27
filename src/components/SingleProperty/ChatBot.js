@@ -15,6 +15,8 @@ import CardsSection from "../Home/CardsSection";
 import ChatCard from "../Home/ChatCard";
 
 const ChatBot = () => {
+
+  const [isChatVisible, setIsChatVisible] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [inputvalue, setInputValue] = useState("");
@@ -32,7 +34,11 @@ const ChatBot = () => {
   const [Category, setCategory] = useState("");
   const [subCategory, setsubCategory] = useState("");
   const [query, setQuery] = useState({ category: "", subcategory: "" });
-
+  const chatContainerRef = useRef(null);
+  useEffect(() => {
+    // Scroll chat content to the bottom whenever it updates
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  }, [data]); 
   useEffect(() => {
     if (Category !== "" || subCategory !== "") {
       setQuery({
@@ -166,8 +172,22 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="chat-height">
-      <div id="recaptcha-container"></div>
+
+    <>
+
+{isChatVisible ? (
+        <>
+    <div className={`chat-height`} ref={chatContainerRef}>
+
+          {/* Add a button to toggle chat visibility */}
+          <button
+            className="toggle-button"
+            onClick={() => setIsChatVisible(false)}
+          >
+          <span style={{fontSize:"16px" , backgroundColor:"transparent" , position:"relative" , left:"14px" , bottom:"0px"}}>hide chat</span>
+          </button>
+
+          <div id="recaptcha-container"></div>
       <h1 className="heading">Chat-Bot</h1>
       <hr className="c-width" />
       <div className="text">
@@ -306,12 +326,22 @@ const ChatBot = () => {
         ) : (
           <></>
         )}
+
+        <div style={{
+          display:"flex",
+          flexDirection:"row",
+    overflow: "scroll",
+    padding:"10px",
+    width: "593px"
+
+        }}>
         {
           data != ''?
           // <CardsSection data={data}/>
           <ChatCard data={data}/>
           :<></>
         }
+        </div>
       </div>
       <input
         type="text"
@@ -323,7 +353,23 @@ const ChatBot = () => {
       <button className="send" onClick={handleSendClick}>
         Send
       </button>
-    </div>
+      </div>
+        </>
+      ) : (
+        <>
+          {/* "Open Chat" button to show the chat */}
+          <button
+            className="open-button"
+            onClick={() => setIsChatVisible(true)}
+          >
+            Open ChatBot
+          </button>
+        </>
+      )}
+      
+   
+
+    </>
   );
 };
 
