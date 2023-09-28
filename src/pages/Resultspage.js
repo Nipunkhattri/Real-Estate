@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 function Resultspage(props) {
     const { data } = props;
+    console.log(data)
     let propData = data.data.properties || [{}];
     let bangaloreEast = [];
     let bangaloreWest = [];
@@ -25,6 +26,7 @@ function Resultspage(props) {
     bangaloreEast = propData?.filter((p, i) => {
         return p.category === 'bangalore east';
     });
+    console.log(bangaloreEast)
 
     bangaloreWest = propData?.filter((p, i) => {
         return p.category === 'bangalore west';
@@ -51,7 +53,7 @@ function Resultspage(props) {
                 my='4' p='4'
                 textAlign={'center'}>
                 <Tabs variant='enclosed-colored'>
-                    <TabList>
+                    {/* <TabList>
                         <Tab fontSize={['10px', 'sm', 'md']}
                             fontWeight={'semibold'}
                             _selected={{ color: 'white', bg: 'secondaryBg' }}
@@ -72,41 +74,41 @@ function Resultspage(props) {
                             _selected={{ color: 'white', bg: 'secondaryBg' }}
                             _hover={{ color: 'white', bg: 'secondaryBg' }}
                             _active={{ color: 'white', bg: 'secondaryBg' }}>Bangalore South</Tab>
-                    </TabList>
-                    <TabPanels>
-                        <TabPanel>
+                    </TabList> */}
+                    {/* <TabPanels>
+                        <TabPanel> */}
                             <SimpleGrid columns={[1, 2, 3]} spacing={10}>
                                 {propData?.map((item, i) => (
-                                    item.item?.category === 'bangalore east') && (
+                                    item.item?.category === 'Bangalore east' || item.item?.category === 'bangalore east' ) && (
                                         <PropertyCard data={item?.item} key={i} />
                                     ))}
                             </SimpleGrid>
-                        </TabPanel>
-                        <TabPanel>
+                        {/* </TabPanel>
+                        <TabPanel> */}
                             <SimpleGrid columns={[1, 2, 3]} spacing={10}>
                                 {bangaloreWest?.map((item, i) => (
                                     item.item?.category === 'bangalore west') && (
                                         <PropertyCard data={item.item} key={i} />
                                     ))}
                             </SimpleGrid>
-                        </TabPanel>
-                        <TabPanel>
+                        {/* </TabPanel>
+                        <TabPanel> */}
                             <SimpleGrid columns={[1, 2, 3]} spacing={10}>
                                 {bangaloreNorth?.map((item, i) => (
                                     item.item?.category === 'bangalore north') && (
                                         <PropertyCard data={item.item} key={i} />
                                     ))}
                             </SimpleGrid>
-                        </TabPanel>
-                        <TabPanel>
+                        {/* </TabPanel>
+                        <TabPanel> */}
                             <SimpleGrid columns={[1, 2, 3]} spacing={10}>
-                                {bangaloreSouth?.map((item, i) => (
+                                {propData?.map((item, i) => (
                                     item.item?.category === 'bangalore south') && (
                                         <PropertyCard data={item.item} key={i} />
                                     ))}
                             </SimpleGrid>
-                        </TabPanel>
-                    </TabPanels>
+                        {/* </TabPanel>
+                    </TabPanels> */}
                 </Tabs>
             </Box>
         </>

@@ -9,13 +9,12 @@ import { useNavigate } from "react-router-dom";
 import { setotp } from "../../redux/reducers/authslice";
 import { useRef } from "react";
 import axios from "axios";
-import { Box, Button, Heading, SimpleGrid } from '@chakra-ui/react';
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
+import { Box, Button, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import CardsSection from "../Home/CardsSection";
 import ChatCard from "../Home/ChatCard";
 
 const ChatBot = () => {
-
   const [isChatVisible, setIsChatVisible] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ const ChatBot = () => {
     phone: "",
     name: "",
   });
-  const [data,setdata] =useState('')
+  const [data, setdata] = useState("");
   const [Category, setCategory] = useState("");
   const [subCategory, setsubCategory] = useState("");
   const [query, setQuery] = useState({ category: "", subcategory: "" });
@@ -38,7 +37,7 @@ const ChatBot = () => {
   useEffect(() => {
     // Scroll chat content to the bottom whenever it updates
     chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-  }, [data]); 
+  }, [data]);
   useEffect(() => {
     if (Category !== "" || subCategory !== "") {
       setQuery({
@@ -51,9 +50,12 @@ const ChatBot = () => {
   const makeApiCall = async () => {
     try {
       console.log("api call");
-        const response = await axios.post("https://real-backend.onrender.com/query",query);
-        console.log(response);
-        setdata(response.data);
+      const response = await axios.post(
+        "https://real-backend.onrender.com/query",
+        query
+      );
+      console.log(response);
+      setdata(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -128,7 +130,7 @@ const ChatBot = () => {
       .then(async (res) => {
         console.log(res);
         console.log(user1);
-        await dispatch(setotp({user1,navigate}));
+        await dispatch(setotp({ user1, navigate }));
         setname(true);
         setLoading(false);
         setInputValue("");
@@ -139,11 +141,11 @@ const ChatBot = () => {
       });
   }
 
-  useEffect(()=>{
-    if(otp != null){
+  useEffect(() => {
+    if (otp != null) {
       onOTPVerify();
     }
-  },[otp])
+  }, [otp]);
 
   console.log(step);
   const handleSendClick = async () => {
@@ -172,188 +174,225 @@ const ChatBot = () => {
   };
 
   return (
-
     <>
-
-{isChatVisible ? (
+      {isChatVisible ? (
         <>
-    <div className={`chat-height`} ref={chatContainerRef}>
+          <div className={`chat-height`} ref={chatContainerRef}>
+            {/* Add a button to toggle chat visibility */}
+            <button
+              className="toggle-button"
+              onClick={() => setIsChatVisible(false)}
+            >
+              <span
+                style={{
+                  fontSize: "16px",
+                  backgroundColor: "transparent",
+                  position: "relative",
+                  left: "14px",
+                  bottom: "0px",
+                }}
+              >
+                hide chat
+              </span>
+            </button>
 
-          {/* Add a button to toggle chat visibility */}
-          <button
-            className="toggle-button"
-            onClick={() => setIsChatVisible(false)}
-          >
-          <span style={{fontSize:"16px" , backgroundColor:"transparent" , position:"relative" , left:"14px" , bottom:"0px"}}>hide chat</span>
-          </button>
-
-          <div id="recaptcha-container"></div>
-      <h1 className="heading">Chat-Bot</h1>
-      <hr className="c-width" />
-      <div className="text">
-        <div className="t1">
-          <p>Hi There , welcome to propmile Consulting.</p>
-        </div>
-        <div className="t2">
-          <p>
-            We are here to help you find your dream home. To enable us to serve
-            you better , please help us with a few details.
-          </p>
-        </div>
-        <div className="t3">
-          <p>
-            Before we get started ,please do share your 10 digit Indian mobile
-            number. In case you are overseas , please enter your mobile number
-            with country code. We promise you, there will no spamming.
-          </p>
-        </div>
-        {number == null ? (
-          <></>
-        ) : (
-          <>
-            <div className="number">
-              <input
-                type="text"
-                className="number-input"
-                placeholder={number}
-              />
-            </div>
-            {showOTP ? (
+            <div id="recaptcha-container"></div>
+            <h1 className="heading">Chat-Bot</h1>
+            <hr className="c-width" />
+            <div className="text">
               <div className="t1">
-                <p>We have send the otp Please Enter it Below</p>
+                <p>Hi There , welcome to propmile Consulting.</p>
               </div>
-            ) : (
-              <></>
-            )}
-          </>
-        )}
-        {otp != null ? (
-          <div className="number">
-            <input type="text" className="number-input" placeholder={otp} />
-          </div>
-        ) : (
-          <></>
-        )}
-        {name ? (
-          <div className="t1">
-            <p>MayI please Know Your name</p>
-          </div>
-        ) : (
-          <></>
-        )}
-        {namevalue != "" ? (
-          <div className="number">
+              <div className="t2">
+                <p>
+                  We are here to help you find your dream home. To enable us to
+                  serve you better , please help us with a few details.
+                </p>
+              </div>
+              <div className="t3">
+                <p>
+                  Before we get started ,please do share your 10 digit Indian
+                  mobile number. In case you are overseas , please enter your
+                  mobile number with country code. We promise you, there will no
+                  spamming.
+                </p>
+              </div>
+              {number == null ? (
+                <></>
+              ) : (
+                <>
+                  <div className="number">
+                    <input
+                      type="text"
+                      className="number-input"
+                      placeholder={number}
+                    />
+                  </div>
+                  {showOTP ? (
+                    <div className="t1">
+                      <p>We have send the otp Please Enter it Below</p>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </>
+              )}
+              {otp != null ? (
+                <div className="number">
+                  <input
+                    type="text"
+                    className="number-input"
+                    placeholder={otp}
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
+              {name ? (
+                <div className="t1">
+                  <p>MayI please Know Your name</p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {namevalue != "" ? (
+                <div className="number">
+                  <input
+                    type="text"
+                    className="number-input"
+                    placeholder={namevalue}
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
+              {location ? (
+                <>
+                  <div className="t1">
+                    <p>Great! I have a few questions before we begin.</p>
+                  </div>
+                  <div className="t1">
+                    <p>
+                      In which part of Bangalore are you looking for a dream
+                      home?
+                    </p>
+                  </div>
+                  <button
+                    className="button"
+                    onClick={() => setCategory("bangalore north")}
+                  >
+                    North
+                  </button>
+                  <button
+                    className="button"
+                    onClick={() => setCategory("bangalore south")}
+                  >
+                    South
+                  </button>
+                  <button
+                    className="button"
+                    onClick={() => setCategory("bangalore east")}
+                  >
+                    East
+                  </button>
+                  <button
+                    className="button"
+                    onClick={() => setCategory("bangalore west")}
+                  >
+                    West
+                  </button>
+                  <button
+                    className="button"
+                    onClick={() => setCategory("bangalore central")}
+                  >
+                    Central
+                  </button>
+                </>
+              ) : (
+                <></>
+              )}
+              {Category != "" ? (
+                <div className="number">
+                  <input
+                    type="text"
+                    className="number-input"
+                    placeholder={Category}
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
+              {Category != "" ? (
+                <>
+                  <div className="t2">
+                    <p>
+                      Now, could you tell me what kind of property would you be
+                      interested in?
+                    </p>
+                  </div>
+                  <button
+                    className="button"
+                    onClick={() => setsubCategory("new launch")}
+                  >
+                    New Launch
+                  </button>
+                  <button
+                    className="button"
+                    onClick={() => setsubCategory("under construction")}
+                  >
+                    Under Construction
+                  </button>
+                  <button
+                    className="button"
+                    onClick={() => setsubCategory("upcoming")}
+                  >
+                    Upcoming
+                  </button>
+                </>
+              ) : (
+                <></>
+              )}
+              {subCategory != "" ? (
+                <>
+                  <div className="number">
+                    <input
+                      type="text"
+                      className="number-input"
+                      placeholder={subCategory}
+                    />
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  overflow: "scroll",
+                  padding: "10px",
+                }}
+              >
+                {data != "" ? (
+                  // <CardsSection data={data}/>
+                  <ChatCard data={data} />
+                ) : (
+                  <></>
+                )}
+              </div>
+            </div>
             <input
               type="text"
-              className="number-input"
-              placeholder={namevalue}
+              id="input-text"
+              placeholder="Type Your Message..."
+              value={inputvalue}
+              onChange={handleInputChange}
             />
+            <button className="send" onClick={handleSendClick}>
+              Send
+            </button>
           </div>
-        ) : (
-          <></>
-        )}
-        {location ? (
-          <>
-            <div className="t2">
-              <p>
-                We are here to help you find your dream home. To enable us to
-                serve you better , please help us with a few details.
-              </p>
-            </div>
-            <div className="t3">
-              <p>
-                Before we get started ,please do share your 10 digit Indian
-                mobile number. In case you are overseas , please enter your
-                mobile number with country code. We promise you, there will no
-                spamming.
-              </p>
-            </div>
-            <button className="button" onClick={() => setCategory("bangalore north")}>
-              North
-            </button>
-            <button className="button" onClick={() => setCategory("bangalore south")}>
-              South
-            </button>
-            <button className="button" onClick={() => setCategory("bangalore east")}>East</button>
-            <button className="button" onClick={() => setCategory("bangalore west")}>West</button>
-            <button className="button" onClick={() => setCategory("bangalore central")}>
-              Central
-            </button>
-          </>
-        ) : (
-          <></>
-        )}
-        {Category != "" ? (
-          <div className="number">
-            <input
-              type="text"
-              className="number-input"
-              placeholder={Category}
-            />
-          </div>
-        ) : (
-          <></>
-        )}
-        {Category != "" ? (
-          <>
-            <div className="t2">
-              <p>
-                We are here to help you find your dream home. To enable us to
-                serve you better , please help us with a few details.
-              </p>
-            </div>
-            <button className="button" onClick={() => setsubCategory("new launch")}>
-              New Launch
-            </button>
-            <button className="button" onClick={() => setsubCategory("under construction")}>
-              Under Construction
-            </button>
-            <button className="button" onClick={() => setsubCategory("upcoming")}>Upcoming</button>
-          </>
-        ) : (
-          <></>
-        )}
-        {subCategory != "" ? (
-          <>
-            <div className="number">
-              <input
-                type="text"
-                className="number-input"
-                placeholder={subCategory}
-              />
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
-
-        <div style={{
-          display:"flex",
-          flexDirection:"row",
-    overflow: "scroll",
-    padding:"10px",
-    width: "593px"
-
-        }}>
-        {
-          data != ''?
-          // <CardsSection data={data}/>
-          <ChatCard data={data}/>
-          :<></>
-        }
-        </div>
-      </div>
-      <input
-        type="text"
-        id="input-text"
-        placeholder="Type Your Message..."
-        value={inputvalue}
-        onChange={handleInputChange}
-      />
-      <button className="send" onClick={handleSendClick}>
-        Send
-      </button>
-      </div>
         </>
       ) : (
         <>
@@ -366,9 +405,6 @@ const ChatBot = () => {
           </button>
         </>
       )}
-      
-   
-
     </>
   );
 };

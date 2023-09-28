@@ -3,7 +3,9 @@ import instance from "./config";
 export const fetchAllProperties = async () => {
     try {
         const res = await instance.get('/properties')
+        console.log(res.data);
         return res.data
+        
     }
     catch (err) {
         return err

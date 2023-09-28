@@ -4,6 +4,7 @@ import { fetchAllProperties } from "../../api/properties";
 export const fetchProperties = createAsyncThunk("properties/fetchall", async () => {
     try {
         const res = await fetchAllProperties()
+        console.log(res.properties);
         return { data: res }
     }
     catch (err) {

@@ -23,7 +23,7 @@ function NewLaunchSlider(props) {
     <Box p='2' m='2'>
       <Heading textAlign={'center'}>New Launch Projects</Heading>
       {all?.length > 0 &&
-        <Carousel autoPlaySpeed={6} enableAutoPlay={true} breakPoints={breakPoints} >
+        <Carousel autoPlaySpeed={1} enableAutoPlay={false} breakPoints={breakPoints} >
           {all?.map((p, i) => (
             <PropertyCard data={p} key={i} />)
           )}

@@ -17,7 +17,7 @@ function CardsSection(props) {
     let underConstructionValue = 0;
 
     bangaloreEast = properties?.filter((p, i) => {
-        return p.category === 'bangalore east';
+        return p.category === 'bangalore east' || 'Bangalore east';
     });
 
     bangaloreWest = properties?.filter((p, i) => {
@@ -36,6 +36,8 @@ function CardsSection(props) {
         return p.category !== 'bangalore east' && p.category !== 'bangalore north' && p.category !== 'bangalore south';
     });
     useEffect(() => {
+
+        console.log(bangaloreEast);
     }, [data]);
 
     return (
@@ -95,7 +97,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreEast?.map((p, i) => {
-                                            if (p.subcategory === "upcoming" && i < 6) {
+                                            if (p.subcategory === "upcoming") {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );
@@ -106,7 +108,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreEast?.map((p, l) => {
-                                            if (p.subcategory === "new launch" && l < 6) {
+                                            if (p.subcategory === "new launch") {
                                                 return (
                                                     <PropertyCard key={l} data={p} />
                                                 );
@@ -117,7 +119,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreEast?.map((p, i) => {
-                                            if (p.subcategory === "under construction" && i < 6) {
+                                            if (p.subcategory === "under construction") {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );
@@ -128,7 +130,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreEast?.map((p, i) => {
-                                            if (p.subcategory === "ready to move in" && i < 6) {
+                                            if (p.subcategory === "ready to move in") {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -140,7 +142,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreEast?.map((p, i) => {
-                                            if (p.subcategory === "exclusive offers" && i < 6) {
+                                            if (p.subcategory === "exclusive offers") {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -171,7 +173,7 @@ function CardsSection(props) {
                             <TabPanels color={'primaryText'}>
                                 <TabPanel>
                                     {bangaloreWest?.map((p, i) => {
-                                        if (p.subcategory === "upcoming" && i < 6) {
+                                        if (p.subcategory === "upcoming" ) {
                                             underConstructionValue++;
                                             return (
                                                 <PropertyCard key={i} data={p} />
@@ -191,7 +193,7 @@ function CardsSection(props) {
                                 </TabPanel>
                                 <TabPanel>
                                     {bangaloreWest?.map((p, i) => {
-                                        if (p.subcategory === "new launch" && i < 6) {
+                                        if (p.subcategory === "new launch" ) {
                                             underConstructionValue++;
                                             return (
                                                 <PropertyCard key={i} data={p} />
@@ -211,7 +213,7 @@ function CardsSection(props) {
                                 </TabPanel>
                                 <TabPanel>
                                     {bangaloreWest?.map((p, i) => {
-                                        if (p.subcategory === "under construction" && i < 6) {
+                                        if (p.subcategory === "under construction" ) {
                                             underConstructionValue++;
                                             return (
                                                 <PropertyCard key={i} data={p} />
@@ -231,7 +233,7 @@ function CardsSection(props) {
                                 </TabPanel>
                                 <TabPanel>
                                     {bangaloreWest?.map((p, i) => {
-                                        if (p.subcategory === "ready to move in" && i < 6) {
+                                        if (p.subcategory === "ready to move in" ) {
                                             underConstructionValue++;
                                             return (
                                                 <PropertyCard key={i} data={p} />
@@ -251,7 +253,7 @@ function CardsSection(props) {
                                 </TabPanel>
                                 <TabPanel>
                                     {bangaloreWest?.map((p, i) => {
-                                        if (p.subcategory === "exclusive offers" && i < 6) {
+                                        if (p.subcategory === "exclusive offers" ) {
                                             underConstructionValue++;
                                             return (
                                                 <PropertyCard key={i} data={p} />
@@ -292,7 +294,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreNorth?.map((p, i) => {
-                                            if (p.subcategory === "upcoming" && i < 6) {
+                                            if (p.subcategory === "upcoming" ) {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -314,7 +316,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreNorth?.map((p, i) => {
-                                            if (p.subcategory === "new launch" && i < 6) {
+                                            if (p.subcategory === "new launch" ) {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -336,7 +338,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreNorth?.map((p, i) => {
-                                            if (p.subcategory === "under construction" && i < 6) {
+                                            if (p.subcategory === "under construction" ) {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -358,7 +360,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreNorth?.map((p, i) => {
-                                            if (p.subcategory === "ready to move in" && i < 6) {
+                                            if (p.subcategory === "ready to move in" ) {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -370,7 +372,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreNorth?.map((p, i) => {
-                                            if (p.subcategory === "exclusive offers" && i < 6) {
+                                            if (p.subcategory === "exclusive offers" ) {
                                                 underConstructionValue++;
                                                 return (
                                                     <PropertyCard key={i} data={p} />
@@ -400,7 +402,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreSouth?.map((p, i) => {
-                                            if (p.subcategory === "upcoming" && i < 6) {
+                                            if (p.subcategory === "upcoming" ) {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );
@@ -411,7 +413,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreSouth?.map((p, i) => {
-                                            if (p.subcategory === "new launch" && i < 6) {
+                                            if (p.subcategory === "new launch" ) {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );
@@ -422,7 +424,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreSouth?.map((p, i) => {
-                                            if (p.subcategory === "under construction" && i < 6) {
+                                            if (p.subcategory === "under construction" ) {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );
@@ -433,7 +435,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreSouth?.map((p, i) => {
-                                            if (p.subcategory === "ready to move in" && i < 6) {
+                                            if (p.subcategory === "ready to move in" ) {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );
@@ -444,7 +446,7 @@ function CardsSection(props) {
                                 <TabPanel>
                                     <SimpleGrid placeItems={'center'} columns={[1, 1, 2, 3]} spacingX='40px' spacingY='20px'>
                                         {bangaloreSouth?.map((p, i) => {
-                                            if (p.subcategory === "exclusive offers" && i < 6) {
+                                            if (p.subcategory === "exclusive offers" ) {
                                                 return (
                                                     <PropertyCard key={i} data={p} />
                                                 );

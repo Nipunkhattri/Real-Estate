@@ -22,6 +22,7 @@ import ChatBot from "../SingleProperty/ChatBot";
 
 function Public() {
     const properties = useSelector(state => state.properties);
+    console.log(properties)
     const advertisements = useSelector(state => state.advertisements);
     const dispatch = useDispatch();
     useEffect(() => {
